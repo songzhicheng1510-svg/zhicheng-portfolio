@@ -1,9 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Prism from "./components/Prism";
+import Strands from "./components/Strands";
 
 /*
 THESIS: Lumora makes focus tangible as a moving world; it refuses the category’s dashboard-and-metrics hero.
@@ -367,6 +368,7 @@ export default function Home() {
       )}
 
       {showPortfolio && (
+        <>
         <section className="portfolio-page" aria-label="Song Zhicheng portfolio">
           <header className="portfolio-nav">
             <button
@@ -467,6 +469,37 @@ export default function Home() {
             </button>
           </footer>
         </section>
+
+          <button
+            className="assistant-orb"
+            type="button"
+            aria-label="Open project assistant"
+            title="Project assistant"
+          >
+            <span className="assistant-orb-animation" aria-hidden="true">
+              <Strands
+                colors={["#F8FBFF", "#82A7CF", "#C1A4CF"]}
+                count={4}
+                speed={0.32}
+                amplitude={1.15}
+                waviness={1.2}
+                thickness={0.62}
+                glow={2.8}
+                taper={2.7}
+                spread={1.15}
+                intensity={0.68}
+                saturation={1.12}
+                opacity={0.95}
+                scale={1.65}
+                glass
+                refraction={0.72}
+                dispersion={0.58}
+                glassSize={1.04}
+              />
+            </span>
+            <MessageCircle className="assistant-orb-icon" aria-hidden="true" />
+          </button>
+        </>
       )}
 
       {isJourneying && (
