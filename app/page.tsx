@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Prism from "./components/Prism";
 import Strands from "./components/Strands";
@@ -497,7 +497,6 @@ export default function Home() {
                 glassSize={1.04}
               />
             </span>
-            <MessageCircle className="assistant-orb-icon" aria-hidden="true" />
           </button>
         </>
       )}
