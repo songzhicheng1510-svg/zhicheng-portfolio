@@ -1,6 +1,25 @@
-/* eslint-disable @next/next/no-page-custom-font */
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const instrumentSerif = localFont({
+  src: [
+    {
+      path: "./fonts/instrument-serif-regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/instrument-serif-italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  display: "swap",
+  preload: true,
+  variable: "--font-instrument-serif",
+  fallback: ["Georgia", "serif"],
+});
 
 export const metadata: Metadata = {
   title: "Zhicheng portfolio",
@@ -29,15 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={instrumentSerif.variable}>
       <body>{children}</body>
     </html>
   );

@@ -7,7 +7,10 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; min-height: 100%; background: #000; font-family: "Instrument Serif", serif; }
+html, body {
+  margin: 0; min-height: 100%; background: #000;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+}
 body { color: var(--white); overflow-x: hidden; }
 button, input { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -25,7 +28,7 @@ button { color: inherit; }
   position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; overflow: hidden;
   background: #000;
   color: var(--white); opacity: 1; visibility: visible;
-  transition: opacity 650ms cubic-bezier(.16, 1, .3, 1), visibility 650ms;
+  transition: opacity 350ms cubic-bezier(.16, 1, .3, 1), visibility 350ms;
 }
 .site-loader.is-leaving { visibility: hidden; opacity: 0; pointer-events: none; }
 .site-loader-lockup {
@@ -47,7 +50,7 @@ button { color: inherit; }
 .site-loader-progress {
   position: absolute; inset: 0; background: rgb(248 251 255 / .92);
   transform: scaleX(0); transform-origin: left center;
-  animation: loader-progress 1.8s cubic-bezier(.16, 1, .3, 1) infinite;
+  animation: loader-progress 1.1s cubic-bezier(.16, 1, .3, 1) infinite;
 }
 @keyframes loader-progress {
   0% { transform: scaleX(0); transform-origin: left center; }
@@ -142,7 +145,7 @@ button { color: inherit; }
 .project-cta:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
 .project-cta-label {
   display: inline-flex; align-items: center; gap: 8px;
-  font-family: "Instrument Serif", serif; font-size: 1.05rem; font-style: italic;
+  font-family: var(--font-instrument-serif), Georgia, serif; font-size: 1.05rem; font-style: italic;
   font-weight: 400; letter-spacing: .02em;
 }
 .project-cta-label svg { transition: transform 260ms cubic-bezier(.16, 1, .3, 1); }
@@ -182,7 +185,7 @@ button { color: inherit; }
   font-variant-numeric: tabular-nums; letter-spacing: .06em; opacity: .68;
 }
 .scene-name {
-  padding-bottom: 1px; font-family: "Instrument Serif", serif; font-size: .96rem;
+  padding-bottom: 1px; font-family: var(--font-instrument-serif), Georgia, serif; font-size: .96rem;
   font-style: italic; line-height: 1; letter-spacing: -.01em; white-space: nowrap;
 }
 .scene-progress {
@@ -390,7 +393,7 @@ button { color: inherit; }
   padding: 80px 0 48px; font-family: system-ui, sans-serif;
 }
 .portfolio-footer p {
-  margin: 0; font-family: "Instrument Serif", serif; font-size: clamp(1.8rem, 3vw, 3.2rem);
+  margin: 0; font-family: var(--font-instrument-serif), Georgia, serif; font-size: clamp(1.8rem, 3vw, 3.2rem);
   font-style: italic; line-height: 1.05;
 }
 .portfolio-footer button {

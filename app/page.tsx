@@ -17,18 +17,22 @@ const scenes = [
   {
     label: "Afterglow",
     url: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260702_081127_0992a171-d3c6-4978-8213-0ec5df8b6d63.mp4",
+    poster: "posters/afterglow.webp",
   },
   {
     label: "Stillness",
     url: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260702_092026_dd05b805-ea0f-40b2-8c52-332b88502592.mp4",
+    poster: "posters/stillness.webp",
   },
   {
     label: "Understory",
     url: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260702_081042_df7202bf-bd80-4b2b-bbc6-1f09ba2870e9.mp4",
+    poster: "posters/understory.webp",
   },
   {
     label: "Daybreak",
     url: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260702_080959_4cac5234-3573-464e-a5b7-76b94b8a7d61.mp4",
+    poster: "posters/daybreak.webp",
   },
 ];
 
@@ -102,7 +106,7 @@ export default function Home() {
 
     const startedAt = loaderStartedAtRef.current ?? Date.now();
     loaderStartedAtRef.current = startedAt;
-    const minimumDelay = Math.max(0, 900 - (Date.now() - startedAt));
+    const minimumDelay = Math.max(0, 450 - (Date.now() - startedAt));
     loaderExitRef.current = setTimeout(() => {
       try {
         sessionStorage.setItem("song-portfolio-loader-seen", "true");
@@ -110,7 +114,7 @@ export default function Home() {
         // The loader still exits when browser storage is unavailable.
       }
       setLoaderLeaving(true);
-      loaderRemoveRef.current = setTimeout(() => setShowLoader(false), 650);
+      loaderRemoveRef.current = setTimeout(() => setShowLoader(false), 350);
     }, minimumDelay);
   }, []);
 
@@ -160,7 +164,7 @@ export default function Home() {
     }
 
     loaderStartedAtRef.current = Date.now();
-    loaderFallbackRef.current = setTimeout(finishLoading, 2800);
+    loaderFallbackRef.current = setTimeout(finishLoading, 900);
     return () => {
       if (loaderFallbackRef.current) clearTimeout(loaderFallbackRef.current);
       if (loaderExitRef.current) clearTimeout(loaderExitRef.current);
@@ -252,11 +256,8 @@ export default function Home() {
               muted
               loop={!autoCycle && activeVideo === index}
               playsInline
-              preload={
-                index === 0 || index === (activeVideo + 1) % scenes.length
-                  ? "auto"
-                  : "none"
-              }
+              preload={index === 0 ? "auto" : "none"}
+              poster={`${publicBasePath}/${scene.poster}`}
               onCanPlay={index === 0 ? finishLoading : undefined}
               onEnded={() => {
                 if (autoCycle) selectVideo((index + 1) % scenes.length);
@@ -281,7 +282,7 @@ export default function Home() {
 
         <Image
           className="train-overlay"
-          src={`${publicBasePath}/train-frame.png`}
+          src={`${publicBasePath}/train-frame.webp`}
           alt=""
           fill
           priority
