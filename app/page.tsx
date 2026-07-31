@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Prism from "./components/Prism";
 
 /*
 THESIS: Lumora makes focus tangible as a moving world; it refuses the category’s dashboard-and-metrics hero.
@@ -384,6 +385,22 @@ export default function Home() {
           </header>
 
           <section className="portfolio-intro" id="profile">
+            <div className="portfolio-prism" aria-hidden="true">
+              <Prism
+                animationType="3drotate"
+                timeScale={0.22}
+                height={3.5}
+                baseWidth={5.5}
+                scale={3.15}
+                hueShift={-0.28}
+                colorFrequency={0.85}
+                noise={0.16}
+                glow={0.82}
+                bloom={0.88}
+                offset={{ x: 100, y: 20 }}
+                suspendWhenOffscreen
+              />
+            </div>
             <h1 ref={portfolioHeadingRef} tabIndex={-1}>
               Spatial intelligence,
               <br />

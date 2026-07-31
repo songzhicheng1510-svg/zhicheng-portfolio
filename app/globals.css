@@ -318,8 +318,25 @@ button { color: inherit; }
   width: min(100% - 40px, 1320px); margin-inline: auto;
 }
 .portfolio-intro {
+  position: relative; isolation: isolate; overflow: hidden;
   display: flex; min-height: calc(100dvh - 84px); flex-direction: column;
   justify-content: space-between; padding: clamp(72px, 12vh, 140px) 0 72px;
+}
+.portfolio-prism {
+  position: absolute; inset: 0 calc(50% - 50vw); z-index: -1;
+  overflow: hidden; pointer-events: none; opacity: .72;
+  background:
+    radial-gradient(circle at 72% 45%, rgb(24 44 65 / .18), transparent 42%),
+    linear-gradient(180deg, #07111a 0%, transparent 18%, transparent 76%, #07111a 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 76%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 76%, transparent 100%);
+}
+.portfolio-prism::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, #07111a 0%, transparent 24%, transparent 76%, #07111a 100%),
+    radial-gradient(circle at 50% 42%, transparent 0%, rgb(7 17 26 / .15) 54%, #07111a 100%);
+  pointer-events: none;
 }
 .portfolio-intro h1 {
   max-width: 1100px; margin: 0; padding-bottom: 8px;
@@ -438,6 +455,10 @@ button { color: inherit; }
   .portfolio-footer { width: min(100% - 36px, 1320px); }
   .portfolio-intro {
     min-height: calc(100svh - 72px); padding: 68px 0 44px;
+  }
+  .portfolio-prism {
+    inset: 0 calc(50% - 50vw); opacity: .58;
+    transform: translateX(-10%);
   }
   .portfolio-intro h1 { font-size: clamp(3.25rem, 16vw, 5.5rem); line-height: .9; }
   .portfolio-intro-grid {
