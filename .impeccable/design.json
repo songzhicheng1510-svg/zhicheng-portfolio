@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-30T10:01:56.7170136+08:00",
+  "title": "Design System: Lumora",
+  "extensions": {
+    "colorMeta": {
+      "midnight-ink": {
+        "role": "primary",
+        "displayName": "Midnight Ink",
+        "canonical": "#182c41",
+        "tonalRamp": ["#0b1722", "#182c41", "#2c435a", "#465e76", "#667d94", "#8ca0b3", "#bdcad5", "#eef3f7"]
+      },
+      "deep-navy": {
+        "role": "primary",
+        "displayName": "Deep Navy",
+        "canonical": "#142334",
+        "tonalRamp": ["#09121b", "#142334", "#29394b", "#435467", "#637487", "#8999aa", "#bbc6d0", "#edf1f4"]
+      },
+      "luminous-white": {
+        "role": "neutral",
+        "displayName": "Luminous White",
+        "canonical": "#f8fbff",
+        "tonalRamp": ["#20262d", "#3b444e", "#59636e", "#78838e", "#99a4ae", "#bac4cd", "#dbe3ea", "#f8fbff"]
+      },
+      "pure-white": {
+        "role": "neutral",
+        "displayName": "Pure White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#262626", "#454545", "#666666", "#888888", "#aaaaaa", "#cccccc", "#e6e6e6", "#ffffff"]
+      },
+      "soft-mist": {
+        "role": "neutral",
+        "displayName": "Soft Mist",
+        "canonical": "#eef5f7",
+        "tonalRamp": ["#1e2628", "#394446", "#556367", "#738286", "#93a2a6", "#b5c3c7", "#d6e2e5", "#eef5f7"]
+      },
+      "black-stage": {
+        "role": "neutral",
+        "displayName": "Black Stage",
+        "canonical": "#000000",
+        "tonalRamp": ["#000000", "#1f1f1f", "#414141", "#626262", "#858585", "#a9a9a9", "#cecece", "#f2f2f2"]
+      },
+      "glass-panel": {
+        "role": "neutral",
+        "displayName": "Glass Panel",
+        "canonical": "rgb(14 29 42 / .62)",
+        "tonalRamp": ["#081018", "#132432", "#2d414f", "#4b606e", "#6d828f", "#93a6b1", "#c0cdd4", "#edf2f4"]
+      },
+      "glass-fallback": {
+        "role": "neutral",
+        "displayName": "Glass Fallback",
+        "canonical": "rgb(17 31 45 / .88)",
+        "tonalRamp": ["#09121b", "#152938", "#304653", "#4e6572", "#708692", "#96a9b3", "#c2ced4", "#eef2f4"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Manifesto Display",
+        "purpose": "Centered two-line hero promise only."
+      },
+      "headline": {
+        "displayName": "Editorial Headline",
+        "purpose": "Information-dialog headings and secondary brand moments."
+      },
+      "body": {
+        "displayName": "Functional Body",
+        "purpose": "Supporting explanations in a compact, legible system sans."
+      },
+      "label": {
+        "displayName": "Quiet Label",
+        "purpose": "Navigation, eyelines, form controls, scene choices, and statistics."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glass-highlight",
+        "value": "inset 0 1px 1px rgb(255 255 255 / .1)",
+        "purpose": "A faint material edge on translucent controls and containers."
+      },
+      {
+        "name": "status-halo",
+        "value": "0 0 0 3px color-mix(in srgb, currentColor 16%, transparent)",
+        "purpose": "Keeps the small status indicator legible without introducing an accent."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Navigation overlays and staged mobile-menu transitions."
+      },
+      {
+        "name": "scene-crossfade",
+        "value": "opacity 1000ms ease-in-out",
+        "purpose": "Slow atmospheric transitions between ambient videos."
+      },
+      {
+        "name": "control-state",
+        "value": "180ms ease",
+        "purpose": "Immediate button press and validation feedback."
+      },
+      {
+        "name": "foreground-drift",
+        "value": "3s ease-in-out infinite",
+        "purpose": "Subtle vertical movement for the foreground train overlay."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "767px"
+      },
+      {
+        "name": "short-viewport",
+        "value": "690px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Pill Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The luminous conversion action used in navigation and the email form.",
+      "html": "<button class=\"ds-btn-primary\">Get Early Access <svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-btn-primary { display:inline-flex; min-height:42px; align-items:center; justify-content:center; gap:8px; border:0; border-radius:999px; padding:0 18px; background:#fff; color:#142334; font-family:system-ui,sans-serif; font-size:.77rem; font-weight:650; cursor:pointer; transition:transform 180ms ease,background-color 180ms ease; } .ds-btn-primary:hover { background:#eef5f7; } .ds-btn-primary:active { transform:translateY(1px) scale(.985); } .ds-btn-primary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }"
+    },
+    {
+      "name": "Email Field",
+      "kind": "input",
+      "refersTo": "input-email",
+      "description": "A transparent input nested inside the shared glass conversion pill.",
+      "html": "<div class=\"ds-email\"><input class=\"ds-email-input\" type=\"email\" placeholder=\"Your best email\"><button class=\"ds-email-action\">Get Early Access</button></div>",
+      "css": ".ds-email { display:flex; width:min(100%,410px); min-height:50px; align-items:center; border-radius:999px; padding:4px; color:#f8fbff; background:rgb(255 255 255 / .01); box-shadow:inset 0 1px 1px rgb(255 255 255 / .1); backdrop-filter:blur(4px); } .ds-email:focus-within { outline:2px solid currentColor; outline-offset:3px; } .ds-email-input { min-width:0; flex:1; border:0; outline:0; background:transparent; padding:0 14px; color:currentColor; font-family:system-ui,sans-serif; font-size:.76rem; } .ds-email-input::placeholder { color:rgb(248 251 255 / .7); } .ds-email-action { min-height:42px; border:0; border-radius:999px; padding:0 18px; background:#fff; color:#142334; font-family:system-ui,sans-serif; font-size:.77rem; font-weight:650; } .ds-email-action:hover { background:#eef5f7; }"
+    },
+    {
+      "name": "Desktop Navigation",
+      "kind": "nav",
+      "description": "A compact glass capsule that keeps utilities quiet over the scene.",
+      "html": "<nav class=\"ds-nav\"><button>How It Works</button><button>Features</button><button>Pricing</button><button>Community</button></nav>",
+      "css": ".ds-nav { display:flex; align-items:center; gap:6px; padding:5px; border-radius:999px; color:rgb(255 255 255 / .84); background:rgb(255 255 255 / .01); box-shadow:inset 0 1px 1px rgb(255 255 255 / .1); backdrop-filter:blur(4px); font-family:system-ui,sans-serif; font-size:.78rem; } .ds-nav button { border:0; border-radius:999px; padding:10px 12px; background:transparent; color:inherit; font:inherit; cursor:pointer; transition:color 200ms ease,background-color 200ms ease; } .ds-nav button:hover { color:#fff; background:rgb(255 255 255 / .08); } .ds-nav button:focus-visible { outline:2px solid currentColor; outline-offset:3px; }"
+    },
+    {
+      "name": "Social Proof Eyeline",
+      "kind": "chip",
+      "description": "A translucent noninteractive proof signal above the manifesto.",
+      "html": "<div class=\"ds-eyeline\"><span class=\"ds-status\"></span>Over 10,000 minds already finding their clarity</div>",
+      "css": ".ds-eyeline { display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:8px 14px; color:#f8fbff; background:rgb(255 255 255 / .01); box-shadow:inset 0 1px 1px rgb(255 255 255 / .1); backdrop-filter:blur(4px); font-family:system-ui,sans-serif; font-size:.7rem; line-height:1; letter-spacing:.01em; } .ds-status { width:5px; height:5px; border-radius:50%; background:currentColor; box-shadow:0 0 0 3px color-mix(in srgb,currentColor 16%,transparent); }"
+    },
+    {
+      "name": "Information Card",
+      "kind": "card",
+      "refersTo": "card-info",
+      "description": "A focused glass explanation surface shown over a blurred modal scrim.",
+      "html": "<article class=\"ds-info-card\"><h2>Features</h2><p>Focus sessions shaped around intentional entry, gentle ambience, and fewer attention leaks.</p><a href=\"#\">Request early access →</a></article>",
+      "css": ".ds-info-card { position:relative; width:min(100%,520px); border-radius:26px; padding:42px; color:#fff; background:rgb(14 29 42 / .62); box-shadow:inset 0 1px 1px rgb(255 255 255 / .1); backdrop-filter:blur(4px); } .ds-info-card h2 { margin:0 42px 12px 0; font-family:'Instrument Serif',serif; font-size:clamp(2.4rem,6vw,4rem); font-weight:400; line-height:1; letter-spacing:-.03em; } .ds-info-card p { margin:0; max-width:46ch; color:rgb(255 255 255 / .76); font-family:system-ui,sans-serif; font-size:.92rem; line-height:1.65; } .ds-info-card a { display:inline-flex; margin-top:28px; border-bottom:1px solid rgb(255 255 255 / .55); padding-bottom:5px; color:#fff; text-decoration:none; font-family:system-ui,sans-serif; font-size:.82rem; font-weight:650; } .ds-info-card a:hover { border-color:#fff; } .ds-info-card a:focus-visible { outline:2px solid currentColor; outline-offset:3px; }"
+    },
+    {
+      "name": "Scene Switcher",
+      "kind": "custom",
+      "description": "A quiet four-option ambience selector with underline-only active state.",
+      "html": "<div class=\"ds-scenes\"><button class=\"ds-active\">Golden Hour</button><button>Still Water</button><button>Deep Woods</button><button>Quiet Dawn</button></div>",
+      "css": ".ds-scenes { display:flex; align-items:center; gap:24px; color:#f8fbff; font-family:system-ui,sans-serif; } .ds-scenes button { border:0; border-bottom:1px solid transparent; background:transparent; padding:7px 0; color:currentColor; opacity:.48; font:inherit; font-size:.68rem; cursor:pointer; transition:opacity 220ms ease,border-color 220ms ease; } .ds-scenes button:hover,.ds-scenes button.ds-active { opacity:1; } .ds-scenes button.ds-active { border-color:currentColor; } .ds-scenes button:focus-visible { outline:2px solid currentColor; outline-offset:3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Cinematic Sanctuary",
+    "overview": "Lumora makes calm immediately felt through a fullscreen moving landscape, a centered editorial manifesto, and restrained translucent controls. The interface should feel like stepping into a protected atmosphere: immersive and elevated, but never theatrical at the expense of legibility or action.\n\nThe system pairs lyrical, high-contrast display type with compact system-UI controls. Visual density stays low, proof remains quiet at the lower edge, and interaction is concentrated into a small number of obvious gestures. It rejects productivity-dashboard chrome, ornamental gradients, and decorative UI that competes with the scene.",
+    "keyCharacteristics": [
+      "Full-bleed ambient imagery is the visual foundation.",
+      "Instrument Serif carries emotion; system UI carries function.",
+      "Liquid-glass surfaces are thin, translucent, and subordinate to content.",
+      "Pill silhouettes make controls feel calm, continuous, and touchable.",
+      "Motion is slow and atmospheric; state feedback is brief and precise."
+    ],
+    "rules": [
+      {
+        "name": "The Scene-First Contrast Rule",
+        "body": "Foreground color may switch between luminous white and midnight ink to preserve contrast against the active scene; the imagery never dictates unreadable text.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Accent Color Rule",
+        "body": "Lumora derives emphasis from luminosity, type scale, and transparency rather than a saturated brand accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Voice Rule",
+        "body": "Instrument Serif expresses aspiration; system UI communicates function. Do not swap those roles.",
+        "section": "typography"
+      },
+      {
+        "name": "The Quiet Scale Rule",
+        "body": "Large type is reserved for one message per surface; all supporting language remains compact.",
+        "section": "typography"
+      },
+      {
+        "name": "The Atmospheric Depth Rule",
+        "body": "Use blur, tonal layers, and media grading for hierarchy; reserve shadows for material edges and micro-signals.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do let supplied ambient media establish color, mood, and depth.",
+      "Do preserve the display/function type split across every extension of the surface.",
+      "Do keep controls translucent, compact, and subordinate to the manifesto.",
+      "Do provide reduced-motion and reduced-transparency fallbacks.",
+      "Do preserve 44px touch targets for mobile icon controls."
+    ],
+    "donts": [
+      "Don't introduce dashboard panels, productivity metrics chrome, or dense feature grids into this surface.",
+      "Don't add saturated accent colors when luminance and typography can carry emphasis.",
+      "Don't place decorative UI over faces, focal scenery, or the central reading corridor.",
+      "Don't use bounce, spring, or conspicuous motion; transitions should feel atmospheric or state-specific.",
+      "Don't fabricate testimonial, pricing, or validation content."
+    ]
+  }
+}
