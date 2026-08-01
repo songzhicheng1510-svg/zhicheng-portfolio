@@ -481,8 +481,8 @@ button { color: inherit; }
     min-height: calc(100svh - 72px); padding: 68px 0 44px;
   }
   .portfolio-prism {
-    inset: 0 calc(50% - 50vw); opacity: .58;
-    transform: translateX(-10%);
+    inset: -5% -12%; opacity: .58;
+    transform: none;
   }
   .portfolio-intro h1 { font-size: clamp(3.25rem, 16vw, 5.5rem); line-height: .9; }
   .portfolio-intro-grid {
