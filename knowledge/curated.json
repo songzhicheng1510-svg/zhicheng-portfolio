@@ -1,0 +1,101 @@
+[
+  {
+    "id": "portfolio-overview",
+    "title": "AI project overview",
+    "text": "The portfolio contains seven main AI and spatial-computing directions. AI-Assisted Building Massing translates design briefs and constraints into editable Rhino Python geometry. Voice-Aided Rhino Modeling converts speech or text into scripts and repairs execution errors through a closed loop. EditPanorama uses diffusion models and controlled inpainting for 360-degree interior renovation. AI-Driven Street-View Video Generation applies depth-controlled image and video regeneration. AI Multi-Agent Preliminary Planning simulates residents and expert consultations for early planning. Multimodal AI Agents for Urban Renewal connect street-view diagnosis with strategy and generated renovation proposals. AI-Assisted Architectural Image Analysis and Generation covers component extraction, mass simplification, mesh and BIM conversion, renderings and analytical diagrams.",
+    "keywords": ["projects", "project overview", "portfolio", "main work", "主要项目", "项目经历", "AI项目", "有哪些项目"],
+    "source": "Curated public project index",
+    "page": null,
+    "href": "#selected-work"
+  },
+  {
+    "id": "profile-education",
+    "title": "Profile and education",
+    "text": "宋志诚 (Song Zhicheng) is an architecture-trained AI product designer based in Beijing. His Chinese name is 宋志诚. He studies Architecture with a focus on AI interaction at Beijing University of Technology (北京工业大学) as a master's student from September 2025. His work connects generative AI, architectural design, Rhino automation, AIGC visualization and product workflows.",
+    "keywords": ["Song Zhicheng", "宋志诚", "北京工业大学", "Beijing University of Technology", "education", "教育", "Beijing", "architecture", "AI product design"],
+    "source": "Public resume summary",
+    "page": null,
+    "href": "#profile"
+  },
+  {
+    "id": "profile-skills",
+    "title": "Skills and research direction",
+    "text": "Core tools include Figma, MockingBot, ComfyUI, Stable Diffusion, Rhino Python, Codex, Word, PowerPoint and Excel. Research interests include natural-language-driven 3D modeling, large language model script generation, generative architectural workflows, panoramic image editing, multimodal agents and spatial computing. Language qualifications include Mandarin Level 2-A and CET-6 English.",
+    "keywords": ["skills", "技能", "Figma", "ComfyUI", "Stable Diffusion", "Rhino Python", "English", "英语"],
+    "source": "Public resume summary",
+    "page": null,
+    "href": "#profile"
+  },
+  {
+    "id": "project-massing",
+    "title": "AI-Assisted Building Massing",
+    "text": "The AI-assisted building massing workflow targets early architectural design. It converts natural-language tasks into structured rules and then into editable Rhino Python geometry. Constraints include site area, floor count, height, functional zoning, cores, courtyards and circulation. The prototype supports mass generation, functional zoning, core and courtyard placement, corridor organization, error detection, multiple iterations, editable results, recoverable errors and traceable processes. The project also produced a CAADRIA conference paper.",
+    "keywords": ["building massing", "Text to Massing", "体量生成", "Rhino Python", "CAADRIA", "constraints", "architectural design"],
+    "source": "AI project portfolio PDF",
+    "page": 79,
+    "href": "#selected-work"
+  },
+  {
+    "id": "project-rhino-voice",
+    "title": "Voice-Aided Rhino Modeling",
+    "text": "The voice-aided Rhino modeling system turns speech or text into executable Rhino scripts. Its architecture combines speech recognition, text input, retrieval, an LLM, a local Python application and Rhino plugins. A file-monitoring plugin runs generated scripts, while a second plugin captures errors and returns them to the Python application. This closed loop enables automatic repair, multi-turn iterative modeling, traceable feedback and improved script reliability. Tests covered basic geometry, parameter editing and more complex modeling tasks. The research identified latency as the main remaining bottleneck and produced an SCI Q2 paper.",
+    "keywords": ["Voice-Aided Rhino", "语音建模", "ASR", "RAG", "LLM", "script repair", "错误修复", "Rhino automation", "Python"],
+    "source": "AI project portfolio PDF",
+    "page": 82,
+    "href": "#selected-work"
+  },
+  {
+    "id": "project-edit-panorama",
+    "title": "EditPanorama",
+    "text": "EditPanorama is an AIGC workflow for indoor renovation design interaction and 360-degree presentation. It combines panoramic input, prompt generation, Stable Diffusion, ControlNet, localized inpainting and panoramic display. The workflow supports style changes, object replacement, relocation, removal and multiple design variants while preserving spatial continuity. Its panorama seam-removal method has four steps: split the panoramic image into two halves from the center; exchange the left and right halves so the original edge seam moves to the center; apply a mask over the central seam area; use localized inpainting to redraw the masked region. This removes the seam without changing the overall panoramic layout. 全景图接缝处理流程为：从中心分割图像，交换左右两半的位置，将边缘接缝移到中央，对中央区域添加遮罩，最后局部重绘消除接缝，同时保持整体布局。Training experiments used 100 panoramic images and evaluated controlled renovation generation. The project produced a CDRF international conference paper.",
+    "keywords": ["EditPanorama", "室内改造", "全景图", "接缝", "无缝拼接", "分割", "交换位置", "遮罩", "局部重绘", "panorama", "360", "Stable Diffusion", "ControlNet", "inpainting", "seam removal", "AIGC"],
+    "source": "AI project portfolio PDF",
+    "page": 1,
+    "href": "#selected-work"
+  },
+  {
+    "id": "project-street-video",
+    "title": "AI-Driven Street-View Video Generation",
+    "text": "This workflow edits source street-view video through AI-generated key imagery and depth-map-conditioned control. The process extracts or selects video imagery, adjusts prompts, generates controlled reference frames and regenerates video while preserving street geometry and visual continuity. It explores direct commands for AI image editing and controlled regeneration for urban and architectural visualization.",
+    "keywords": ["street view", "街景视频", "video generation", "depth map", "ControlNet", "AIGC video"],
+    "source": "AI project portfolio PDF",
+    "page": 24,
+    "href": "#selected-work"
+  },
+  {
+    "id": "project-multi-agent-planning",
+    "title": "AI Multi-Agent Preliminary Planning",
+    "text": "The preliminary-planning system integrates LLM and VLM reasoning into an AI expert decision workflow for urban renewal. It includes virtual residents, automated questionnaires, resident profiles, 30-day life simulations and a multi-agent expert consultation system. Simulated residents provide behavior and schedule evidence. Architecture, community-service and other expert agents discuss the reports, while a moderator guides the meeting and an assistant summarizes proposals. Users can intervene in the dialogue to influence the direction of the consultation.",
+    "keywords": ["multi-agent", "多智能体", "urban renewal", "城市更新", "virtual resident", "expert consultation", "LLM", "VLM"],
+    "source": "AI project portfolio PDF",
+    "page": 29,
+    "href": "#selected-work"
+  },
+  {
+    "id": "project-urban-renewal-agents",
+    "title": "Multimodal AI Agents for Urban Renewal",
+    "text": "The multimodal urban-renewal study builds an automated micro-renewal workflow for street spaces. It organizes perception, diagnosis, strategy and generation into one process. Original street-view images are analyzed to extract issue tags, which then support targeted design strategies and generated renovation renderings. The work connects visual evidence with planning recommendations instead of treating image generation as an isolated final step.",
+    "keywords": ["multimodal agents", "urban renewal", "street space", "perception", "diagnosis", "strategy", "rendering", "微更新"],
+    "source": "AI project portfolio PDF",
+    "page": 39,
+    "href": "#selected-work"
+  },
+  {
+    "id": "project-image-analysis",
+    "title": "AI-Assisted Architectural Image Analysis and Generation",
+    "text": "This research explores multiple AI-assisted architectural image workflows: extracting stairs and windows from architectural images, simplifying buildings into massing, converting massing to editable meshes, generating BIM or IFC models, translating briefs into preliminary schemes, converting climate data into analysis diagrams, producing renderings from material and style references, and generating circulation, landscape, facade logic and construction-detail diagrams. Gemini and image-generation tools are used as reasoning and production components across these tasks.",
+    "keywords": ["architectural image", "BIM", "IFC", "Gemini", "Rodin", "analysis diagram", "rendering", "climate", "facade"],
+    "source": "AI project portfolio PDF",
+    "page": 48,
+    "href": "#selected-work"
+  },
+  {
+    "id": "experience-product",
+    "title": "Product and operations experience",
+    "text": "Song Zhicheng worked as a Product Operations Intern at Guyu Biotechnology Group from May to September 2025, supporting corporate-culture activities, research, planning, channel promotion and post-event review. He used MockingBot, Figma and Codex in planning work. He also worked as a Product Assistant Intern at Zhuhai Biyou Technology from May to September 2024, analyzing content performance and user growth across Xiaohongshu and WeChat, and improving topic selection, publishing time, cover design and copy. Public resume evidence reports more than 25,000 targeted followers acquired through six months of content work.",
+    "keywords": ["internship", "实习", "product operations", "产品运营", "product assistant", "Figma", "Codex", "Xiaohongshu", "WeChat"],
+    "source": "Public resume summary",
+    "page": null,
+    "href": "#profile"
+  }
+]

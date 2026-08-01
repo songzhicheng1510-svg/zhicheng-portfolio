@@ -34,10 +34,14 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
+      - name: Exclude server-only routes from static export
+        run: mv app/api "$RUNNER_TEMP/portfolio-api"
+
       - name: Build static site
         env:
           GITHUB_PAGES: "true"
           NEXT_PUBLIC_BASE_PATH: "/${{ github.event.repository.name }}"
+          NEXT_PUBLIC_CHAT_API_URL: "${{ vars.CHAT_API_URL || 'https://announcements-engaged-wild-nathan.trycloudflare.com/api/chat' }}"
         run: npx next build
 
       - name: Upload Pages artifact
