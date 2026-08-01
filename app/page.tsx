@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import PortfolioChat from "./components/PortfolioChat";
 import Prism from "./components/Prism";
 import Strands from "./components/Strands";
 
@@ -88,6 +89,9 @@ export default function Home() {
   const [autoCycle, setAutoCycle] = useState(true);
   const [showLoader, setShowLoader] = useState(true);
   const [loaderLeaving, setLoaderLeaving] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isAssistantPromptTimed, setIsAssistantPromptTimed] = useState(false);
+  const [isAssistantOrbEngaged, setIsAssistantOrbEngaged] = useState(false);
   const cooldownRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const loaderStartedAtRef = useRef<number | null>(null);
   const loaderFallbackRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -100,6 +104,28 @@ export default function Home() {
   const portfolioRevealRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const portfolioFinishRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isDarkScene = activeVideo === 2;
+  const isAssistantPromptVisible =
+    showPortfolio &&
+    !isChatOpen &&
+    (isAssistantPromptTimed || isAssistantOrbEngaged);
+
+  useEffect(() => {
+    const revealTimer = window.setTimeout(
+      () => setIsAssistantPromptTimed(showPortfolio),
+      0,
+    );
+    if (!showPortfolio) {
+      return () => window.clearTimeout(revealTimer);
+    }
+    const promptTimer = window.setTimeout(
+      () => setIsAssistantPromptTimed(false),
+      5_000,
+    );
+    return () => {
+      window.clearTimeout(revealTimer);
+      window.clearTimeout(promptTimer);
+    };
+  }, [showPortfolio]);
 
   const finishLoading = useCallback(() => {
     if (loaderDismissedRef.current) return;
@@ -470,11 +496,29 @@ export default function Home() {
           </footer>
         </section>
 
+          <div
+            className={`assistant-prompt${isAssistantPromptVisible ? "" : " is-hidden"}`}
+            aria-hidden={!isAssistantPromptVisible}
+          >
+            <strong>我是宋志诚的作品集问答助手</strong>
+            <span>欢迎提问 / Ask me about the work</span>
+          </div>
           <button
-            className="assistant-orb"
+            className={`assistant-orb${isChatOpen ? " is-open" : ""}`}
             type="button"
-            aria-label="Open project assistant"
+            aria-label={
+              isChatOpen
+                ? "关闭作品集问答助手 / Close portfolio assistant"
+                : "打开作品集问答助手 / Open portfolio assistant"
+            }
             title="Project assistant"
+            aria-expanded={isChatOpen}
+            aria-controls="portfolio-chat"
+            onMouseEnter={() => setIsAssistantOrbEngaged(true)}
+            onMouseLeave={() => setIsAssistantOrbEngaged(false)}
+            onFocus={() => setIsAssistantOrbEngaged(true)}
+            onBlur={() => setIsAssistantOrbEngaged(false)}
+            onClick={() => setIsChatOpen((current) => !current)}
           >
             <span className="assistant-orb-animation" aria-hidden="true">
               <Strands
@@ -498,6 +542,7 @@ export default function Home() {
               />
             </span>
           </button>
+          <PortfolioChat open={isChatOpen} onClose={() => setIsChatOpen(false)} />
         </>
       )}
 

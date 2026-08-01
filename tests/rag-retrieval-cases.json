@@ -1,0 +1,48 @@
+[
+  { "name": "助手身份", "question": "你叫什么名字？", "expectDirect": true },
+  { "name": "个人身份", "question": "宋志诚是谁？", "expectedTitles": ["Profile and education"] },
+  { "name": "学校", "question": "你现在在哪所学校读硕士？", "expectedTitles": ["Profile and education"] },
+  { "name": "技能", "question": "你擅长哪些工具？", "expectedTitles": ["Skills and research direction"] },
+  { "name": "项目概览", "question": "你有哪些主要项目？", "expectedTitles": ["AI project overview"] },
+  { "name": "语音建模", "question": "说话控制 Rhino 建模是怎么做的？", "expectedTitles": ["Voice-Aided Rhino Modeling"] },
+  { "name": "语音错误修复", "question": "语音 Rhino 系统如何自动修复脚本错误？", "expectedTitles": ["Voice-Aided Rhino Modeling"] },
+  { "name": "全景接缝", "question": "室内全景改造如何消除接缝？", "expectedTitles": ["EditPanorama"] },
+  { "name": "体量生成", "question": "自然语言如何生成可编辑建筑体量？", "expectedTitles": ["AI-Assisted Building Massing", "Text to Massing"] },
+  { "name": "街景视频", "question": "街景视频生成怎样保持空间连续？", "expectedTitles": ["AI-Driven Street-View Video Generation"] },
+  { "name": "多智能体规划", "question": "多智能体如何模拟居民参与城市更新？", "expectedTitles": ["AI Multi-Agent Preliminary Planning", "Multimodal AI Agents for Urban Renewal"] },
+  { "name": "建筑图像", "question": "建筑图片怎样转换为 BIM 或 IFC？", "expectedTitles": ["AI-Assisted Architectural Image Analysis and Generation"] },
+  { "name": "产品实习", "question": "你的产品运营实习做了什么？", "expectedTitles": ["Product and operations experience"] },
+  {
+    "name": "连续追问全景",
+    "question": "这个项目的核心流程是什么？",
+    "history": [{ "role": "user", "content": "介绍一下 EditPanorama" }],
+    "expectedTitles": ["EditPanorama"]
+  },
+  {
+    "name": "连续追问语音建模",
+    "question": "它还存在哪些局限？",
+    "history": [{ "role": "user", "content": "介绍一下语音 Rhino 建模系统" }],
+    "expectedTitles": ["Voice-Aided Rhino Modeling"]
+  },
+  { "name": "拒答电影", "question": "你最喜欢什么电影？", "expectReject": true },
+  { "name": "拒答天气", "question": "今天北京天气怎么样？", "expectReject": true },
+  { "name": "拒答菜谱", "question": "红烧肉应该怎么做？", "expectReject": true },
+  { "name": "拒答薪资", "question": "你期望的工资是多少？", "expectReject": true },
+  { "name": "拒答新闻", "question": "最近有什么国际新闻？", "expectReject": true },
+  { "name": "拒答娱乐", "question": "推荐一首流行歌曲", "expectReject": true },
+  { "name": "问候分流", "question": "你好", "expectDirect": true },
+  { "name": "英文问候", "question": "hallo", "expectDirect": true },
+  { "name": "英文身份", "question": "Who are you?", "expectDirect": true },
+  { "name": "英文帮助", "question": "What can I ask?", "expectDirect": true },
+  { "name": "致谢分流", "question": "谢谢", "expectDirect": true },
+  { "name": "帮助分流", "question": "可以问什么？", "expectDirect": true },
+  {
+    "name": "来源连续追问",
+    "question": "这个项目还有哪些局限？",
+    "history": [
+      { "role": "user", "content": "你有哪些主要项目？" },
+      { "role": "assistant", "content": "其中包括语音辅助 Rhino 建模。", "sourceTitles": ["Voice-Aided Rhino Modeling"] }
+    ],
+    "expectedTitles": ["Voice-Aided Rhino Modeling"]
+  }
+]
